@@ -1,0 +1,230 @@
+.trainer-section {
+  background: radial-gradient(circle at center, #1a1a1a, #0c0c0c);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.highlight-text {
+  color: red;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.scroll-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 40px;
+}
+
+.scroll-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  justify-content: center;
+  scrollbar-width: none;
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Mobile specific - 100% scrollbar hiding */
+@media (max-width: 768px) {
+  .scroll-container {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  
+  .scroll-container::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+  }
+  
+  .scroll-wrapper {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
+.trainer-card {
+  min-width: 220px;
+  max-width: 220px;
+  background: #191919;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 0 10px #000;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+}
+
+.trainer-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 60, 0, 0.2) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.trainer-card:hover::before {
+  opacity: 1;
+}
+
+.trainer-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(255, 60, 0, 0.4);
+}
+
+.trainer-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  position: relative;
+  z-index: 0;
+}
+
+.trainer-card:hover .trainer-img {
+  transform: scale(1.1);
+}
+
+.trainer-info {
+  background: #111;
+  position: relative;
+  z-index: 2;
+}
+
+.trainer-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.trainer-card:hover .trainer-name {
+  color: #FF3C00;
+}
+
+.trainer-role {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 6px;
+}
+
+.learn-link {
+  font-size: 0.9rem;
+  color: red;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.trainer-card:hover .learn-link {
+  transform: translateX(5px);
+}
+
+.learn-link .arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.trainer-card:hover .learn-link .arrow {
+  transform: translateX(5px);
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #111;
+  color: #FF3C00;
+  border: 1px solid #FF3C00;
+  padding: 8px 10px;
+  z-index: 10;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-btn:hover {
+  background: #FF3C00;
+  color: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 15px rgba(255, 60, 0, 0.4);
+}
+
+.scroll-btn.left {
+  left: 10px;
+}
+
+.scroll-btn.right {
+  right: 10px;
+}
+
+.view-all-btn {
+  background: none;
+  border: 1px solid #FF3C00;
+  color: #FF3C00;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.view-all-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: #FF3C00;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: 0;
+}
+
+.view-all-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.view-all-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+.view-all-btn:hover {
+  color: white;
+  border-color: #ff5500;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 60, 0, 0.4);
+}
+
+.view-all-btn:active {
+  transform: translateY(0);
+}

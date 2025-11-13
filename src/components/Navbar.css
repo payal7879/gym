@@ -1,0 +1,90 @@
+/* Navbar Styling */
+.custom-navbar {
+  transition: all 0.3s ease;
+}
+
+/* Navbar Links */
+.nav-link-custom {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-link-custom::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #FF3C00;
+  transition: width 0.3s ease;
+}
+
+.nav-link-custom:hover::before {
+  width: 100%;
+}
+
+.nav-link-custom:hover {
+  color: #FF3C00 !important;
+  transform: translateY(-2px);
+}
+
+/* Navbar Buttons */
+.navbar-btn {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.navbar-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 60, 0, 0.3);
+}
+
+.navbar-btn-primary {
+  transition: all 0.3s ease;
+}
+
+.navbar-btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: 0;
+}
+
+.navbar-btn-primary:hover::after {
+  width: 300px;
+  height: 300px;
+}
+
+.navbar-btn-primary span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Brand Hover Effect */
+.navbar-brand:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Mobile Menu Toggle */
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 60, 0, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .nav-link-custom:hover {
+    transform: translateX(5px);
+  }
+}
+

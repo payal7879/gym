@@ -1,0 +1,46 @@
+/* Stats Section */
+.stats-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  cursor: pointer;
+}
+
+.stats-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: linear-gradient(180deg, #FF3C00, #FF6600);
+  transition: height 0.4s ease;
+}
+
+.stats-card:hover::before {
+  height: 100%;
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  padding-left: 10px;
+}
+
+.stats-value {
+  transition: all 0.3s ease;
+}
+
+.stats-card:hover .stats-value {
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stats-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .stats-card {
+    border-left: 2px solid rgba(255, 60, 0, 0.5) !important;
+  }
+}
+

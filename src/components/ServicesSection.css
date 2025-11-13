@@ -1,0 +1,66 @@
+/* Service Card Hover Effects */
+.service-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 60, 0, 0.2) 0%, rgba(255, 60, 0, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.service-card:hover::before {
+  opacity: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(255, 60, 0, 0.3);
+  border-color: #ff5500 !important;
+}
+
+.service-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Service Learn More Link */
+.service-learn-more {
+  transition: all 0.3s ease;
+}
+
+.service-learn-more:hover {
+  color: #ffffff !important;
+  transform: translateX(5px);
+}
+
+.service-learn-more .arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.service-learn-more:hover .arrow-icon {
+  transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-card:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+  
+  .service-card {
+    margin-bottom: 20px;
+  }
+}
+
+/* Animation removed to prevent conflicts */
+
